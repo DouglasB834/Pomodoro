@@ -37,9 +37,6 @@ export const CyclesContext = createContext({} as CyclesContextType);
 export const CyclesContextProvider = ({
   children,
 }: CyclesContextProvideProps) => {
-  //criando userReduce ,recebe FN com 2 parametros e valor inicial
-  //useReduce e usado somente para armazenar informações complexas e precisa ser mudadas constante mente com informações vindo de varias fontes e components diferentes .
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [cyclesState, dispatch] = useReducer(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (state: CyclesState, action: any) => {
@@ -77,42 +74,6 @@ export const CyclesContextProvider = ({
         default:
           return state;
       }
-      /*
-      if (action.type === "ADD_NEW_CYCLE") {
-        return {
-          ...state,
-          cycles: [...state.cycles, action.payload.newCycle],
-          activeCycleId: action.payload.newCycle.id,
-        };
-      }
-      if (action.type === "INTERRUPT_CURRENT_CYCLE") {
-        return {
-          ...state,
-          cycles: state.cycles.map((cycle) => {
-            if (cycle.id === state.activeCycleId) {
-              return { ...cycle, interruptedDate: new Date() };
-            } else {
-              return cycle;
-            }
-          }),
-          activeCycleId: null,
-        };
-      }
-      if (action.type === "MARK_CURRENT_CYCLE_AS_FINISHED") {
-        return {
-          ...state,
-          cycles: state.cycles.map((cycle) => {
-            if (cycle.id === state.activeCycleId) {
-              return { ...cycle, finishedDate: new Date() };
-            } else {
-              return cycle;
-            }
-          }),
-          activeCycleId: null,
-        };
-      }
-      return state;
-      */
     },
     {
       //valor inicial
@@ -123,8 +84,6 @@ export const CyclesContextProvider = ({
 
   const { cycles, activeCycleId } = cyclesState;
 
-  // const [activeCycleId, setActiveCycleId] = useState<string | null>(null);
-  //armazenar o segundos que foi passado -1
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0);
   //passar para dentro de uma função o ciclo ativo no momento
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId);
@@ -149,8 +108,6 @@ export const CyclesContextProvider = ({
       },
     });
 
-    // setCycles((state) => [...state, newCycle]);
-    // setActiveCycleId(id);
     setAmountSecondsPassed(0);
   };
 
