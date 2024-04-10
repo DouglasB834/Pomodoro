@@ -69,7 +69,7 @@ export const CyclesContextProvider = ({
 
   // interruption cycle
   function handleInterruptCycle() {
-    dispatch(interruptCycleAction);
+    dispatch(interruptCycleAction());
     /*
     setCycles((state) =>
       state.map((cycle) => {
@@ -86,7 +86,7 @@ export const CyclesContextProvider = ({
 
   //fn que finaliza cycle
   function markCycleAsFinished() {
-    dispatch(cycleAsFinishedAction);
+    dispatch(cycleAsFinishedAction());
     /*
     setCycles((state) =>
       state.map((cycle) => {
