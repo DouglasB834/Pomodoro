@@ -1,4 +1,5 @@
-import { Cycle } from "../contexts/CycleContext";
+import { Cycle } from "../../contexts/CycleContext";
+import { ActionTypes } from "./actions";
 
 interface CyclesState {
   cycles: Cycle[];
@@ -8,13 +9,14 @@ interface CyclesState {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function cyclesReduce(state: CyclesState, action: any) {
   switch (action.type) {
-    case "ADD_NEW_CYCLE":
+    //head code
+    case ActionTypes.ADD_NEW_CYCLE:
       return {
         ...state,
         cycles: [...state.cycles, action.payload.newCycle],
         activeCycleId: action.payload.newCycle.id,
       };
-    case "INTERRUPT_CURRENT_CYCLE":
+    case ActionTypes.INTERRUPT_CURRENT_CYCLE:
       return {
         ...state,
         cycles: state.cycles.map((cycle) => {
@@ -26,7 +28,7 @@ export function cyclesReduce(state: CyclesState, action: any) {
         }),
         activeCycleId: null,
       };
-    case "MARK_CURRENT_CYCLE_AS_FINISHED":
+    case ActionTypes.MARK_CURRENT_CYCLE_AS_FINISHED:
       return {
         ...state,
         cycles: state.cycles.map((cycle) => {
