@@ -1,30 +1,38 @@
-# React + TypeScript + Vite
+# React Pomodoro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div style="display:flex;justify-content:center"><img src="./src/assets/pomodoro.png" style="width:600px; heigth:500px" /></div>
 
-Currently, two official plugins are available:
+## A aplicativo de Pomodoro desenvolvido utilizando React com TypeScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ele possui duas páginas principais: uma para iniciar um ciclo Pomodoro e outra para visualizar o histórico de sessões.
 
-## Expanding the ESLint configuration
+### Utilizei
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Styled Components para estilização.
 
-- Configure the top-level `parserOptions` property like this:
+- React Router para navegação entre as páginas.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Context API e reducers para gerenciamento de estado complexo.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Immer para garantir imutabilidade dos dados.
+
+- Zod para validação de entrada.
+
+- e utilizei o localStorage para armazenar o conteúdo localmente.
+
+Se precisar de mais detalhes ou ajuda com alguma parte específica do projeto, é só me avisar!
+
+LinkedIn: [Douglas Borges ](https://www.linkedin.com/in/douglassborges/)
+
+## para inicar o projeto
+
+- fazer o git clone.
+- depois de clonar entrar na pasta do projeto.
+- abrir o terminal de comando e digitar <code> npm install </code> para instalar as dependencias.
+- depois <code>npm run dev </code>
+
+### observação
+
+Além disso, fiz questão de adicionar comentários ao longo do código para que eu possa acompanhar como o projeto evoluiu desde o início até o final.
+
+Isso me ajuda a manter tudo organizado e bem documentado.

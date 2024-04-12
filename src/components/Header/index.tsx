@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 export const Header = () => {
   return (
     <HeaderContainer>
-      <h3>🚀</h3>
+      <h3>🚀 Pomodoro Power</h3>
 
       <nav>
         <NavLink to="/" title="home">

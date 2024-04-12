@@ -13,20 +13,23 @@ export const History = () => {
 
       <HistoryList>
         <table>
-          <th>
-            <thead>
+          {/* <th> */}
+          <thead>
+            <tr>
               <th>Tarefa</th>
               <th>Duração</th>
               <th>Inicio</th>
               <th>Status</th>
-            </thead>
-          </th>
+            </tr>
+          </thead>
+          {/* </th> */}
           <tbody>
             {cycles.map((cycle) => (
               <tr key={cycle?.id}>
                 <td>{cycle?.task}</td>
                 <td>{cycle?.minuteAmount} minutos</td>
                 <td>
+                  {/* converte para new Data se for necessario */}
                   {formatDistanceToNow(cycle?.startDate, {
                     addSuffix: true,
                     locale: ptBR,
